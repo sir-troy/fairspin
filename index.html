@@ -238,7 +238,25 @@ footer{position:relative;z-index:2;text-align:center;color:var(--muted);font-siz
 <link rel="canonical" href="https://fairspin.useful-indeed.com/">
 <link rel="icon" type="image/svg+xml" href="logo.svg">
 <link rel="apple-touch-icon" href="logo.svg">
-<style id="useful-indeed-mobile">.brand .ui-applogo{width:42px;height:42px;border-radius:11px;display:block;flex:none}footer:not(.ui-foot){padding-bottom:18px!important}@media (max-width:720px){footer:not(.ui-foot){padding-right:20px!important;text-align:center;justify-content:center}}.ui-foot{max-width:1400px;margin:0 auto!important;padding:0}.ui-foot .ui-foot-in{max-width:none;padding-left:20px;padding-right:20px}</style>
+<style id="useful-indeed-mobile">.brand .ui-applogo{width:42px;height:42px;border-radius:11px;display:block;flex:none}footer:not(.ui-foot){padding-bottom:18px!important}@media (max-width:720px){footer:not(.ui-foot){padding-right:20px!important;text-align:center;justify-content:center}}.ui-foot{max-width:1400px;margin:0 auto!important;padding:0}.ui-foot .ui-foot-in{max-width:none;padding-left:20px;padding-right:20px}
+/* guide below the wheel */
+.guide{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:30px 20px 60px;line-height:1.65;font-size:16px}
+.guide h2{font-size:clamp(26px,4vw,36px);font-weight:800;letter-spacing:-.02em;margin:0 0 10px}
+.guide h3{font-size:20px;font-weight:800;margin:34px 0 10px}
+.guide p,.guide li{color:var(--muted)}
+.guide b{color:var(--text)}
+.guide ol,.guide ul{padding-left:22px;display:grid;gap:6px}
+.guide .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.guide .card2{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.guide .card2 b{display:block;margin-bottom:4px}
+.guide .card2 span{color:var(--muted);font-size:14.5px}
+.guide details{border-top:1px solid var(--line);padding:12px 0}
+.guide summary{cursor:pointer;font-weight:700;color:var(--text)}
+.guide details p{margin-top:6px}
+.guide kbd{font-family:ui-monospace,monospace;font-size:13px;border:1px solid var(--line);border-radius:6px;padding:0 6px;background:var(--panel)}
+.more-link{position:relative;z-index:2;display:block;text-align:center;color:var(--muted);font-size:13px;text-decoration:none;margin:4px 0 0}
+.more-link:hover{color:var(--text)}
+</style>
 </head>
 <body>
 <div class="aurora"><i></i><i></i><i></i></div>
@@ -360,6 +378,45 @@ footer{position:relative;z-index:2;text-align:center;color:var(--muted);font-siz
     </div>
   </aside>
 </main>
+<a class="more-link" href="#guide">How it works ↓</a>
+<section class="guide" id="guide">
+  <h2>A truly fair name wheel</h2>
+  <p>FairSpin is a free, big and bright 3D name wheel for raffles, giveaways, classroom picks, team stand-ups and deciding who goes first. Paste your list, spin, and let the wheel decide. With <b>Fair mode</b> on, everyone gets picked once before anyone is picked again, so nobody gets left out and nobody wins twice by luck.</p>
+
+  <h3>How to use it</h3>
+  <ol>
+    <li><b>Add names</b> in the Names tab, one per line. You can paste a whole column from Excel or Google Sheets.</li>
+    <li><b>Turn on Fair mode</b> if each person should be picked only once until everyone has had a turn.</li>
+    <li><b>Spin</b> by clicking the wheel or the Spin button, or press <kbd>Space</kbd> or <kbd>Ctrl</kbd> + <kbd>Enter</kbd>.</li>
+    <li><b>See every pick</b> in the Results tab, in order. Copy the results, or put everyone back on the wheel to start again.</li>
+  </ol>
+
+  <h3>Good for</h3>
+  <div class="cards">
+    <div class="card2"><b>Raffles &amp; giveaways</b><span>Draw winners live on a projector or screen share, so everyone can see the pick is random.</span></div>
+    <div class="card2"><b>Classrooms</b><span>Call on students fairly. Fair mode makes sure every student gets a turn.</span></div>
+    <div class="card2"><b>Teams &amp; meetings</b><span>Decide who presents first, who leads stand-up or who takes the next task.</span></div>
+    <div class="card2"><b>Instant draw order</b><span>Shuffle every name into a full random order in one click, for queues, seating or presentation slots.</span></div>
+  </div>
+
+  <h3>Is it really random?</h3>
+  <p>Yes. Every spin uses your browser's cryptographic random number generator (<b>crypto.getRandomValues</b>) with unbiased sampling, the same kind of randomness used for security. Each slice has exactly the same chance of being picked. The only way to raise someone's chance is to add their name more than once, which some raffles do on purpose for people with more entries.</p>
+
+  <h3>Make it yours</h3>
+  <ul>
+    <li><b>Themes:</b> switch the look of the wheel and background.</li>
+    <li><b>Spin buddy:</b> a 3D character who spins the wheel and reacts to every pick. Turn it off for a cleaner screen.</li>
+    <li><b>Sound effects:</b> ticks while spinning and a fanfare for the winner.</li>
+    <li><b>Spin duration:</b> make spins quicker, or build up more suspense.</li>
+    <li><b>Shuffle, Sort, Dedupe and Clear</b> to tidy your list.</li>
+  </ul>
+
+  <h3>Questions</h3>
+  <details><summary>Are my names saved or uploaded?</summary><p>Your list is saved only in this browser, so it's still there next time. It is never uploaded. Use Clear to remove it.</p></details>
+  <details><summary>Can I use FairSpin for an official contest?</summary><p>FairSpin is great for informal picks and giveaways. For regulated lotteries, gambling or contests that legally require a certified random draw, use a certified service instead.</p></details>
+  <details><summary>How many names can I add?</summary><p>As many as you like. With very long lists the slices get thin, so some labels may be hard to read, but every name still has an equal chance.</p></details>
+  <details><summary>Does it work on phones and projectors?</summary><p>Yes. It works in any modern browser, and the full-screen button makes it easy to show on a TV or projector.</p></details>
+</section>
 <footer>
   <span hidden style="display:none!important">© <span id="yr">2026</span> FairSpin.</span>
   <span>Your names stay in this browser only.</span>
@@ -1192,5 +1249,6 @@ requestAnimationFrame(loop);
   </div>
 </footer>
 <script src="useful-indeed/badge.js" defer></script>
+<script>document.querySelectorAll('a.more-link').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.getElementById('guide').scrollIntoView({behavior:'smooth'})})});</script>
 </body>
 </html>
